@@ -1,17 +1,22 @@
-# 🏀 Mini Projeto Databricks + Spark + S3
+# 🏀 Projeto NBA com PySpark + Databricks + S3
 
-## Objetivo
-
-Ingerir dados de jogadores da NBA armazenados no S3, processar com Apache Spark e registrar em catálogo no Databricks.
+Este projeto é um pipeline de ingestão e transformação de dados da NBA, utilizando PySpark no Databricks e armazenamento em buckets S3. Os dados são tratados e armazenados no formato Delta Lake, organizados em camadas (Bronze neste caso), com versionamento no GitHub.
 
 ---
 
-## Etapas
+## 🚀 Objetivo
 
-### 1. Subir o CSV para o S3
-#### Esse código faz a ingestão do dados da NBA localmente e salva dentro de um bucket no s3
+O objetivo deste projeto é:
+
+- Demonstrar a ingestão de dados de um bucket S3
+- Realizar um pequeno processamento com PySpark (filtro, transformação e cálculo)
+- Salvar os dados como Delta Lake
+- Criar uma tabela gerenciada no Hive Metastore (Databricks Community Edition)
+- Disponibilizar a estrutura como exemplo real de pipeline de dados em nuvem
+
+---
+
+## 🧱 Arquitetura
 
 
-### 2. Código que será rodado dentro de um cluster no Databricks
-Em notebooks dë run em cada célula.
-Nesse código sera feito uma filtragem nos dados e o carregamento dentro de uma tabela bronze no Bucket
+ Ingestão Local -> S3 (CSV cru) → Databricks (PySpark Processamento) → S3 (Delta Lake) → Tabela Hive (Processesing)
